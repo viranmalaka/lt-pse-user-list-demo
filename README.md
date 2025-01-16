@@ -5,32 +5,62 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tasks
+- This is the task definition: https://heartpace.notion.site/Front-end-developer-202da38e92f54f3193e8fd2a7230f63d
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- <details>
+  <summary>Outline</summary>
+  Create a web application for managing a list of users with the ability to view, search, filter, add, and edit data. You need to display more than 1000 users on the page and everything should work quickly.
 
-## Learn More
+  **In total, there should be a table with virtualization, a form for working with user entities, a bar chart and a donut chart that will show statistics on the data at your discretion**
 
-To learn more about Next.js, take a look at the following resources:
+  ### **Technical Requirements:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  1. **Core Technologies**: Use React for the frontend and Redux for state management.
+  2. **Data**: Use a mock API (e.g., using json-server or MirageJS) to simulate server operations. Functions for retrieving the user list, adding, deleting, and editing a user should be implemented.
+  3. **Tables**: Implement a virtual table for displaying the list of users. The table should support sorting and filtering by key attributes (e.g., name, age, city). Recommended libraries: **react-table v8, ag grid, react-base-table** with built-in virtualization functionality or you can use r**eact-window, react-virtualization**
+  4. **Forms**: Add forms for creating and editing user data. Forms must include validation of the entered data. Recommended libraries: **Formik**
+  5. **Charts**: Use a data visualization library to create charts, for example, demographic data on users (age, distribution by cities, etc.). Recommended libraries:  https://airbnb.io/visx
+  6. **Search and Filtering**: Implement the ability to search for users and filter the list by key parameters.
+  7. **Responsive Design**: The interface should display correctly on various devices and screen resolutions. Recommended libraries: **Material-ui v5**
+  8. **Additional**: Implement the option to choose a theme (light/dark). Recommended libraries: **Material-ui v5**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  ### **Evaluation Criteria:**
 
-## Deploy on Vercel
+  - Code Quality: Cleanliness, readability, use of modern practices and ES6+ standards.
+  - Application Architecture: Logic separation, use of Redux for state management.
+  - UI/UX: Interface convenience, visual design.
+  - Functionality: Compliance with the technical assignment, error-free operation of the application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  ### **Submission:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  - The result should be provided as a link to GitHub with instructions for running the application locally.
+  - Hosting the application on GitHub Pages, Netlify, Vercel, or similar platforms to demonstrate the project's functionality in real-time is encouraged.
+  </details>
+
+### Tasks
+- [ ] Manage User List 
+  - [ ] User list should have 1000+ items
+  - [ ] Users can be search, filter, add and edited. 
+  - [ ] [Bonus] User can be deleted
+  - [ ] There should be a column to show bar and donut chart in the user table.
+  - [ ] Virtualization is a must
+  
+### Tech
+- [x] React + Redux
+- [x] Data 
+   -  [ ] using json-server or MirageJS
+   -  [x] Use in-memory db with nextjs apis with fakerjs
+- [ ] user react-table v8, ag grid, react-base-table for virtualized table
+- [ ] or create your own table with react-window, react-virtualization
+- [ ] Use formik for form state managements.
+- [ ] Add Charts in row, use visx
+- [ ] Search and filter by key parameters (name, age, city)
+ - [ ] Responsiveness. use MUI v5
+ - [ ] Theme editor - Bonus
+ - [ ] Unit tests 
