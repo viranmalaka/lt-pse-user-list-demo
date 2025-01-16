@@ -1,4 +1,4 @@
-import { UserService } from "@/service/UserService";
+import { UserService } from "@/app/service/UserService";
 
 export async function GET() {
   const users = UserService.getUserList();
