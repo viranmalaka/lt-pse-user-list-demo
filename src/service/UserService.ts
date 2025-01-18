@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { User } from "@/app/types/user";
+import { User } from "@/types/user";
 
 export class UserService {
   static userList = Array(1000)
