@@ -1,9 +1,29 @@
+'use client';
+
 import { useEffect } from 'react';
 import { Filters } from './Filters/Filters';
 import { UserTable } from './UserTable/UserTable';
+import { setError, setIsLoading, setUsers } from '@/lib/store/user-store';
+import { FEUserService } from '@/lib/user-service';
+import to from 'await-to-js';
+import { useAppDispatch } from '@/lib/store/store';
 
 export function UserManagement() {
-  useEffect(() => {}, []);
+  const dispatch = useAppDispatch();
+
+  // this all implementation can be moved to react query. but as I need to use redux I am keeping it here
+  useEffect(() => {
+    (async () => {
+      dispatch(setIsLoading(true));
+      const [err, users] = await to(FEUserService.getUsers());
+      dispatch(setIsLoading(false));
+      if (err) {
+        dispatch(setError(err.message));
+      } else if (users) {
+        dispatch(setUsers(users));
+      }
+    })();
+  }, [dispatch]);
 
   return (
     <div className="space-y-4">
