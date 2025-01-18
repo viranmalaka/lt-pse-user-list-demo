@@ -1,13 +1,5 @@
-import { Filters } from "@/components/Filters/Filters";
-import { UserTable } from "@/components/UserTable/UserTable";
+import { UserManagement } from '@/components/user-management/UserManagement';
 
 export default function Home() {
-  return (
-    <div className="space-y-4">
-      <Filters />
-      <div className="overflow-x-auto">
-        <UserTable />
-      </div>
-    </div>
-  );
+  return <UserManagement />;
 }

@@ -1,29 +1,25 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+'use client';
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { ReduxProvider } from '@/lib/store/StoreProvider';
 
-export const metadata: Metadata = {
-  title: "Principal Software Engineer - User List Demo",
-  description: "User list demo application",
-};
+const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <title>Principle Software Engineer - User List Demo</title>
+      </head>
       <body className={inter.className}>
-        <header className="bg-primary text-primary-foreground p-4 flex items-center">
-          <img src="/logo.svg" alt="Company Logo" className="h-8 w-8 mr-4" />
-          <h1 className="text-xl font-bold">
-            Principal Software Engineer - User List Demo
-          </h1>
+        <header className="bg-primary text-primary-foreground flex items-center p-4">
+          <img src="/logo.svg" alt="Company Logo" className="mr-4 h-8 w-8" />
+          <h1 className="text-xl font-bold">Principal Software Engineer - User List Demo</h1>
         </header>
-        <main className="container mx-auto p-4">{children}</main>
+        <ReduxProvider>
+          <main className="container mx-auto p-4">{children}</main>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -43,7 +43,7 @@ export function UserAddDrawer({
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent side="left">
+      <SheetContent side="right">
         <SheetHeader>
           <SheetTitle>{userToEdit ? "Edit User" : "Add New User"}</SheetTitle>
           <SheetDescription>
