@@ -47,8 +47,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Manage User List 
   - [ ] User list should have 1000+ items
   - [x] Users can be search, filter, add and edited. 
-  - [ ] [Bonus] User can be deleted
-  - [ ] There should be a column to show bar and donut chart in the user table.
+  - [x] [Bonus] User can be deleted
+  - [x] There should be a column to show bar and donut chart in the user table.
   - [ ] Virtualization is a must
   
 ### Tech
@@ -58,7 +58,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
    -  [x] Use in-memory db with nextjs apis with fakerjs
 - [ ] user react-table v8, ag grid, react-base-table for virtualized table
 - [ ] or create your own table with react-window, react-virtualization
-- [ ] Use formik for form state managements.
+- [x] Use formik for form state managements.
 - [x] Add Charts in row, use visx
 - [x] Search and filter by key parameters (name, age, city)
  - [ ] Responsiveness. use MUI v5
