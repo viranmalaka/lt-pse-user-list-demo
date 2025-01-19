@@ -2,13 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface IUIState {
-  isDrawerOpen: boolean;
-  theme: 'light' | 'dark';
+  userFormDrawer: 'add' | 'edit' | null; // null means closed
 }
 
 const initialState: IUIState = {
-  isDrawerOpen: false,
-  theme: 'light',
+  userFormDrawer: null,
 };
 
 export const uiSlice = createSlice({
@@ -16,14 +14,11 @@ export const uiSlice = createSlice({
   initialState,
 
   reducers: {
-    setIsDrawerOpen: (state, action: PayloadAction<boolean>) => {
-      state.isDrawerOpen = action.payload;
-    },
-    setTheme: (state, action: PayloadAction<'light' | 'dark'>) => {
-      state.theme = action.payload;
+    setUserFormDrawer: (state, action: PayloadAction<IUIState['userFormDrawer']>) => {
+      state.userFormDrawer = action.payload;
     },
   },
 });
 
-export const { setIsDrawerOpen, setTheme } = uiSlice.actions;
+export const { setUserFormDrawer } = uiSlice.actions;
 export const uiReducer = uiSlice.reducer;

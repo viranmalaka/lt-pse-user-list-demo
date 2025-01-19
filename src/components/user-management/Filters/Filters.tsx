@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAppDispatch, useAppSelector } from '@/lib/store/store';
 import { setSearchQuery } from '@/lib/store/user-store';
+import { setUserFormDrawer } from '@/lib/store/ui-store';
 
 export function Filters() {
   const searchQuery = useAppSelector((state) => state.user.searchQuery);
@@ -12,6 +13,10 @@ export function Filters() {
 
   const handleSearch: ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch(setSearchQuery(e.target.value));
+  };
+
+  const handleAddNewModal = () => {
+    dispatch(setUserFormDrawer('add'));
   };
 
   return (
@@ -25,8 +30,7 @@ export function Filters() {
           className="flex-1"
         />
       </div>
-      <Button>Add New</Button>
-      {/* <UserAddDrawer isOpen={isDrawerOpen} setIsOpen={setIsDrawerOpen} /> */}
+      <Button onClick={handleAddNewModal}>Add New</Button>
     </div>
   );
 }

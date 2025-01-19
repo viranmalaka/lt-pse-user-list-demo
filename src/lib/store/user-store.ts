@@ -8,6 +8,7 @@ export interface IUserState {
   isLoading: boolean;
   error: string;
   searchQuery: string;
+  userFormLoading: boolean;
 }
 
 const initialState: IUserState = {
@@ -15,6 +16,7 @@ const initialState: IUserState = {
   isLoading: false,
   error: '',
   searchQuery: '',
+  userFormLoading: false,
 };
 
 export const userSlice = createSlice({
@@ -33,6 +35,12 @@ export const userSlice = createSlice({
     },
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
+    },
+    setUserFormLoading: (state, action: PayloadAction<boolean>) => {
+      state.userFormLoading = action.payload;
+    },
+    addUser: (state, action: PayloadAction<User>) => {
+      state.users.push(action.payload);
     },
   },
 });
@@ -64,5 +72,5 @@ export const selectFilteredUsers = createSelector(
   },
 );
 
-export const { setUsers, setIsLoading, setError, setSearchQuery } = userSlice.actions;
+export const { setUsers, setIsLoading, setError, setSearchQuery, setUserFormLoading, addUser } = userSlice.actions;
 export const userReducer = userSlice.reducer;

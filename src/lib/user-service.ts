@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { User } from '@/types/user';
+import { FormUser, User } from '@/types/user';
 
 const client = axios.create({
   baseURL: '/api/users',
@@ -10,7 +10,7 @@ export class FEUserService {
     return client.get<User[]>('/').then((res) => res.data);
   }
 
-  static async createUser(user: User) {
+  static async createUser(user: FormUser) {
     return client.post('/', user).then((res) => res.data);
   }
 

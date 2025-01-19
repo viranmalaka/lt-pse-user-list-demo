@@ -7,6 +7,7 @@ import { setError, setIsLoading, setUsers } from '@/lib/store/user-store';
 import { FEUserService } from '@/lib/user-service';
 import to from 'await-to-js';
 import { useAppDispatch } from '@/lib/store/store';
+import { UserFormDrawer } from './UserFormDrawer/UserFormDrawer';
 
 export function UserManagement() {
   const dispatch = useAppDispatch();
@@ -28,6 +29,7 @@ export function UserManagement() {
   return (
     <div className="space-y-4">
       <Filters />
+      <UserFormDrawer />
       <div className="overflow-x-auto">
         <UserTable />
       </div>

@@ -14,3 +14,11 @@ export type User = {
   }>;
   email: string;
 };
+
+export type FormUser = {
+  firstName: string;
+  lastName: string;
+  age: number;
+  city: string;
+  email: string;
+};

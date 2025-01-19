@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { User } from '@/types/user';
 
+// TODO: refactor faker functionality to create the default list and adding list.
 export class UserService {
   static userList = Array(10)
     .fill({})
