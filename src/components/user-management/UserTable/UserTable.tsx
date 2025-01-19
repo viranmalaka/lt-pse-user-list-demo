@@ -1,13 +1,22 @@
 'use client';
 
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { useAppSelector } from '@/lib/store/store';
+import { useAppDispatch, useAppSelector } from '@/lib/store/store';
 import { RevenueTypePieChart } from './RevenueTypePieChart';
 import { LastWeekPurchasesChart } from './LastWeekPurchasesChart';
-import { selectFilteredUsers } from '@/lib/store/user-store';
+import { selectFilteredUsers, setEditingUser } from '@/lib/store/user-store';
+import { Button } from '@/components/ui/button';
+import { User } from '@/types/user';
+import { setUserFormDrawer } from '@/lib/store/ui-store';
 
 export function UserTable() {
   const users = useAppSelector(selectFilteredUsers);
+  const dispatch = useAppDispatch();
+
+  const handleEdit = (user: User) => {
+    dispatch(setEditingUser(user));
+    dispatch(setUserFormDrawer('edit'));
+  };
 
   return (
     <>
@@ -35,16 +44,16 @@ export function UserTable() {
               <TableCell>
                 <LastWeekPurchasesChart data={user.lastWeekPurchases} />
               </TableCell>
-              {/* <TableCell>
+              <TableCell>
                 <div className="flex space-x-2">
                   <Button variant="outline" size="sm" onClick={() => handleEdit(user)}>
                     Edit
                   </Button>
-                  <Button variant="destructive" size="sm" onClick={() => handleDelete(user.id)}>
+                  {/* <Button variant="destructive" size="sm" onClick={() => handleDelete(user.id)}>
                     Delete
-                  </Button>
+                  </Button> */}
                 </div>
-              </TableCell> */}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

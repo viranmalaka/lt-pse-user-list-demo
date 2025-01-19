@@ -65,6 +65,14 @@ export class UserService {
   }
 
   static updateUser(userId: string, user: User) {
-    this.userList = this.userList.map((u) => (u.id === userId ? user : u));
+    this.userList = this.userList.map((u) => {
+      if (u.id === userId) {
+        const newUser = { ...u, ...user };
+        console.log({ newUser });
+        return newUser;
+      }
+      return u;
+    });
+    return user;
   }
 }

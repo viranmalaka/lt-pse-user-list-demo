@@ -14,7 +14,7 @@ export class FEUserService {
     return client.post('/', user).then((res) => res.data);
   }
 
-  static async updateUser(id: string, user: User) {
+  static async updateUser(id: string, user: FormUser) {
     return client.put(`/${id}`, user).then((res) => res.data);
   }
 

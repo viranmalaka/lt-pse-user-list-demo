@@ -9,6 +9,7 @@ export interface IUserState {
   error: string;
   searchQuery: string;
   userFormLoading: boolean;
+  editingUser: User | null;
 }
 
 const initialState: IUserState = {
@@ -17,6 +18,7 @@ const initialState: IUserState = {
   error: '',
   searchQuery: '',
   userFormLoading: false,
+  editingUser: null,
 };
 
 export const userSlice = createSlice({
@@ -41,6 +43,17 @@ export const userSlice = createSlice({
     },
     addUser: (state, action: PayloadAction<User>) => {
       state.users.push(action.payload);
+    },
+    setEditingUser: (state, action: PayloadAction<User | null>) => {
+      state.editingUser = action.payload;
+    },
+    updateUser: (state, action: PayloadAction<{ id: string; newUser: User }>) => {
+      state.users = state.users.map((user) => {
+        if (user.id === action.payload.id) {
+          return { ...user, ...action.payload.newUser };
+        }
+        return user;
+      });
     },
   },
 });
@@ -72,5 +85,14 @@ export const selectFilteredUsers = createSelector(
   },
 );
 
-export const { setUsers, setIsLoading, setError, setSearchQuery, setUserFormLoading, addUser } = userSlice.actions;
+export const {
+  setUsers,
+  setIsLoading,
+  setError,
+  setSearchQuery,
+  setUserFormLoading,
+  addUser,
+  setEditingUser,
+  updateUser,
+} = userSlice.actions;
 export const userReducer = userSlice.reducer;
