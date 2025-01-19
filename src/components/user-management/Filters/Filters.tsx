@@ -3,11 +3,9 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { UserAddDrawer } from '../AddUserDrawer/AddUserDrawer';
 
 export function Filters() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const handleSearch = () => {
     // Implement search functionality
@@ -26,7 +24,7 @@ export function Filters() {
         />
         <Button onClick={handleSearch}>Search</Button>
       </div>
-      <Button onClick={() => setIsDrawerOpen(true)}>Add New</Button>
+      <Button>Add New</Button>
       {/* <UserAddDrawer isOpen={isDrawerOpen} setIsOpen={setIsDrawerOpen} /> */}
     </div>
   );
