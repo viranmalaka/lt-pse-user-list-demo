@@ -1,8 +1,8 @@
-import { faker } from "@faker-js/faker";
-import { User } from "@/types/user";
+import { faker } from '@faker-js/faker';
+import { User } from '@/types/user';
 
 export class UserService {
-  static userList = Array(1000)
+  static userList = Array(10)
     .fill({})
     .map(() => {
       return {
@@ -15,18 +15,18 @@ export class UserService {
           .fill({})
           .map(() => ({
             date: faker.date.recent(),
-            amount: faker.number.float({ min: 0, max: 1000 }),
+            amount: faker.number.float({ min: 0, max: 10 }),
           })),
         revenueTypes: [
           {
-            type: "subscription",
-            amount: faker.number.float({ min: 0, max: 1000 }),
+            type: 'S',
+            amount: faker.number.float({ min: 30, max: 100 }),
           },
           {
-            type: "purchase",
-            amount: faker.number.float({ min: 0, max: 1000 }),
+            type: 'P',
+            amount: faker.number.float({ min: 30, max: 100 }),
           },
-          { type: "ad", amount: faker.number.float({ min: 0, max: 1000 }) },
+          { type: 'A', amount: faker.number.float({ min: 30, max: 100 }) },
         ],
         email: faker.internet.email(),
       };
@@ -36,13 +36,7 @@ export class UserService {
     return this.userList;
   }
 
-  static addUser(newUser: {
-    firstName: string;
-    lastName: string;
-    age: number;
-    city: string;
-    email: string;
-  }) {
+  static addUser(newUser: { firstName: string; lastName: string; age: number; city: string; email: string }) {
     const user: User = {
       id: faker.string.uuid(),
       ...newUser,
@@ -54,11 +48,11 @@ export class UserService {
         })),
       revenueTypes: [
         {
-          type: "subscription",
+          type: 'subscription',
           amount: faker.number.float({ min: 0, max: 1000 }),
         },
-        { type: "purchase", amount: faker.number.float({ min: 0, max: 1000 }) },
-        { type: "ad", amount: faker.number.float({ min: 0, max: 1000 }) },
+        { type: 'purchase', amount: faker.number.float({ min: 0, max: 1000 }) },
+        { type: 'ad', amount: faker.number.float({ min: 0, max: 1000 }) },
       ],
     };
     this.userList.push(user);

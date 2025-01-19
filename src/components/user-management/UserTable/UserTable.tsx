@@ -2,6 +2,8 @@
 
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useAppSelector } from '@/lib/store/store';
+import { RevenueTypePieChart } from './RevenueTypePieChart';
+import { LastWeekPurchasesChart } from './LastWeekPurchasesChart';
 
 export function UserTable() {
   const users = useAppSelector((state) => state.user.users);
@@ -26,6 +28,12 @@ export function UserTable() {
               </TableCell>
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.age}</TableCell>
+              <TableCell>
+                <RevenueTypePieChart data={user.revenueTypes} width={50} height={50} />
+              </TableCell>
+              <TableCell>
+                <LastWeekPurchasesChart data={user.lastWeekPurchases} />
+              </TableCell>
               {/* <TableCell>
                 <div className="flex space-x-2">
                   <Button variant="outline" size="sm" onClick={() => handleEdit(user)}>
