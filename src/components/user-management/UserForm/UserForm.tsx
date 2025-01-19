@@ -14,7 +14,7 @@ export function UserForm({ initialValues, onSubmit }: UserFormProps) {
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       <Form>
         <Field name="firstName">
-          {({ field, form, meta }: FieldProps<string>) => (
+          {({ field, meta }: FieldProps<string>) => (
             <div className="my-2">
               <Label>First Name</Label>
               <Input type="text" placeholder="Jone" {...field} />
@@ -24,7 +24,7 @@ export function UserForm({ initialValues, onSubmit }: UserFormProps) {
         </Field>
 
         <Field name="lastName">
-          {({ field, form, meta }: FieldProps<string>) => (
+          {({ field, meta }: FieldProps<string>) => (
             <div className="my-2">
               <Label>Last Name</Label>
               <Input type="text" placeholder="Doe" {...field} />
@@ -34,7 +34,7 @@ export function UserForm({ initialValues, onSubmit }: UserFormProps) {
         </Field>
 
         <Field name="email">
-          {({ field, form, meta }: FieldProps<string>) => (
+          {({ field, meta }: FieldProps<string>) => (
             <div className="my-2">
               <Label htmlFor="email">Email</Label>
               <Input type="email" placeholder="john@acme.com" {...field} />
@@ -44,7 +44,7 @@ export function UserForm({ initialValues, onSubmit }: UserFormProps) {
         </Field>
 
         <Field name="age">
-          {({ field, form, meta }: FieldProps<number>) => (
+          {({ field, meta }: FieldProps<number>) => (
             <div className="my-2">
               <Label>Age</Label>
               <Input type="number" placeholder="18-60" {...field} />
@@ -54,7 +54,7 @@ export function UserForm({ initialValues, onSubmit }: UserFormProps) {
         </Field>
 
         <Field id="city" name="city" placeholder="somewhere on earth">
-          {({ field, form, meta }: FieldProps<string>) => (
+          {({ field, meta }: FieldProps<string>) => (
             <div className="my-2">
               <Label>City</Label>
 

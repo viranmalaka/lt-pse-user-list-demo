@@ -1,4 +1,4 @@
-import { Copy, Trash2 } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -28,7 +28,7 @@ export function DeleteUser({ user }: DeleteUserProps) {
 
   const handleDelete = async () => {
     setIsLoading(true);
-    const [err, data] = await to(FEUserService.deleteUser(user.id));
+    const [err] = await to(FEUserService.deleteUser(user.id));
     setIsLoading(false);
 
     if (err) {
