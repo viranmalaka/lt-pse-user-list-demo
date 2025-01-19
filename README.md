@@ -59,8 +59,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] user react-table v8, ag grid, react-base-table for virtualized table
 - [ ] or create your own table with react-window, react-virtualization
 - [ ] Use formik for form state managements.
-- [ ] Add Charts in row, use visx
-- [ ] Search and filter by key parameters (name, age, city)
+- [x] Add Charts in row, use visx
+- [x] Search and filter by key parameters (name, age, city)
  - [ ] Responsiveness. use MUI v5
- - [ ] Theme editor - Bonus
+ - [x] Theme editor - Bonus
+    - [x] save on localstorage - used next-theme package.
  - [ ] Unit tests 
