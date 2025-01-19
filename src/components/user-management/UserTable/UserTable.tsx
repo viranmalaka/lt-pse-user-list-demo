@@ -4,9 +4,10 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 import { useAppSelector } from '@/lib/store/store';
 import { RevenueTypePieChart } from './RevenueTypePieChart';
 import { LastWeekPurchasesChart } from './LastWeekPurchasesChart';
+import { selectFilteredUsers } from '@/lib/store/user-store';
 
 export function UserTable() {
-  const users = useAppSelector((state) => state.user.users);
+  const users = useAppSelector(selectFilteredUsers);
 
   return (
     <>

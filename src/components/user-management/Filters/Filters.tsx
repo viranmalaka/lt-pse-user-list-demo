@@ -1,15 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { ChangeEventHandler } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useAppDispatch, useAppSelector } from '@/lib/store/store';
+import { setSearchQuery } from '@/lib/store/user-store';
 
 export function Filters() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const searchQuery = useAppSelector((state) => state.user.searchQuery);
+  const dispatch = useAppDispatch();
 
-  const handleSearch = () => {
-    // Implement search functionality
-    console.log('Searching for:', searchTerm);
+  const handleSearch: ChangeEventHandler<HTMLInputElement> = (e) => {
+    dispatch(setSearchQuery(e.target.value));
   };
 
   return (
@@ -17,12 +19,11 @@ export function Filters() {
       <div className="flex min-w-[200px] flex-1 items-center gap-2">
         <Input
           type="text"
-          placeholder="Search users..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search name city and email here. To filter by age use 'age:30' or 'age:30-40' format"
+          value={searchQuery}
+          onChange={handleSearch}
           className="flex-1"
         />
-        <Button onClick={handleSearch}>Search</Button>
       </div>
       <Button>Add New</Button>
       {/* <UserAddDrawer isOpen={isDrawerOpen} setIsOpen={setIsDrawerOpen} /> */}
