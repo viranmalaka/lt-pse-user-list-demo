@@ -8,6 +8,7 @@ import { selectFilteredUsers, setEditingUser } from '@/lib/store/user-store';
 import { Button } from '@/components/ui/button';
 import { User } from '@/types/user';
 import { setUserFormDrawer } from '@/lib/store/ui-store';
+import { DeleteUser } from './DeleteUser';
 
 export function UserTable() {
   const users = useAppSelector(selectFilteredUsers);
@@ -49,9 +50,7 @@ export function UserTable() {
                   <Button variant="outline" size="sm" onClick={() => handleEdit(user)}>
                     Edit
                   </Button>
-                  {/* <Button variant="destructive" size="sm" onClick={() => handleDelete(user.id)}>
-                    Delete
-                  </Button> */}
+                  <DeleteUser user={user} />
                 </div>
               </TableCell>
             </TableRow>

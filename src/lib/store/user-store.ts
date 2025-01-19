@@ -55,6 +55,9 @@ export const userSlice = createSlice({
         return user;
       });
     },
+    deleteUser: (state, action: PayloadAction<string>) => {
+      state.users = state.users.filter((user) => user.id !== action.payload);
+    },
   },
 });
 
@@ -94,5 +97,6 @@ export const {
   addUser,
   setEditingUser,
   updateUser,
+  deleteUser,
 } = userSlice.actions;
 export const userReducer = userSlice.reducer;

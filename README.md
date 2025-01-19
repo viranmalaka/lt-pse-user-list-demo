@@ -46,7 +46,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Tasks
 - [ ] Manage User List 
   - [ ] User list should have 1000+ items
-  - [ ] Users can be search, filter, add and edited. 
+  - [x] Users can be search, filter, add and edited. 
   - [ ] [Bonus] User can be deleted
   - [ ] There should be a column to show bar and donut chart in the user table.
   - [ ] Virtualization is a must

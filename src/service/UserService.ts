@@ -62,6 +62,7 @@ export class UserService {
 
   static deleteUser(userId: string) {
     this.userList = this.userList.filter((user) => user.id !== userId);
+    return userId;
   }
 
   static updateUser(userId: string, user: User) {
