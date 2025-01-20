@@ -49,7 +49,9 @@ export function DeleteUser({ user }: DeleteUserProps) {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Delete User</DialogTitle>
-          <DialogDescription>You are going to delete {user.firstName} user. Are you sure about this?</DialogDescription>
+          <DialogDescription>
+            You are going to delete {user?.firstName} user. Are you sure about this?
+          </DialogDescription>
         </DialogHeader>
         <DialogFooter className="justify-between">
           <DialogClose asChild>

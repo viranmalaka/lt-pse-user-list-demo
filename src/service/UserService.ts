@@ -3,7 +3,7 @@ import { User } from '@/types/user';
 
 // TODO: refactor faker functionality to create the default list and adding list.
 export class UserService {
-  static userList = Array(10)
+  static userList = Array(1000)
     .fill({})
     .map(() => {
       return {

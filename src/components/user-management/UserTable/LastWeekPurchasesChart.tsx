@@ -1,9 +1,13 @@
+/**
+ * this file is referred from https://airbnb.io/visx/bars
+ */
+
 import React, { useMemo } from 'react';
 import { Group } from '@visx/group';
 import { GradientTealBlue } from '@visx/gradient';
 import { scaleBand, scaleLinear } from '@visx/scale';
-import { useSpring as spring, animated } from '@react-spring/web';
 import { User } from '@/types/user';
+import { Bar } from '@visx/shape';
 
 const verticalMargin = 20;
 
@@ -46,7 +50,7 @@ export function LastWeekPurchasesChart({ width = 100, height = 50, data }: LastW
   return width < 10 ? null : (
     <svg width={width} height={height}>
       <GradientTealBlue id="teal" />
-      <rect width={width} height={height} fill="url(#teal)" rx={14} />
+      <rect width={width} height={height} fill="url(#teal)" rx={4} />
       <Group top={verticalMargin / 2}>
         {data.map((d) => {
           const letter = getLetter(d);
@@ -55,20 +59,14 @@ export function LastWeekPurchasesChart({ width = 100, height = 50, data }: LastW
           const barX = xScale(letter);
           const barY = yMax - barHeight;
 
-          const springProps = spring({
-            from: { height: 0 },
-            to: { height: barHeight },
-            config: { tension: 220, friction: 20 },
-          });
-
           return (
-            <animated.rect
+            <Bar
               key={`bar-${letter}`}
               x={barX}
               y={barY}
               width={barWidth}
-              height={springProps.height}
-              fill="rgba(233, 23, 69, 0.9)"
+              height={barHeight}
+              fill="rgba(23, 233, 217, .5)"
             />
           );
         })}

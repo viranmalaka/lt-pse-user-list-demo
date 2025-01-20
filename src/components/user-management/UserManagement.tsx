@@ -1,15 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 import { Filters } from './Filters/Filters';
-import { UserTable } from './UserTable/UserTable';
 import { setError, setIsLoading, setUsers } from '@/lib/store/user-store';
 import { FEUserService } from '@/lib/user-service';
 import to from 'await-to-js';
 import { useAppDispatch } from '@/lib/store/store';
 import { UserFormDrawer } from './UserFormDrawer/UserFormDrawer';
 
-export function UserManagement() {
+export function UserManagement({ children }: PropsWithChildren) {
   const dispatch = useAppDispatch();
 
   // this all implementation can be moved to react query. but as I need to use redux I am keeping it here
@@ -30,9 +29,7 @@ export function UserManagement() {
     <div className="space-y-4">
       <Filters />
       <UserFormDrawer />
-      <div className="overflow-x-auto">
-        <UserTable />
-      </div>
+      <div className="overflow-x-auto">{children}</div>
     </div>
   );
 }
