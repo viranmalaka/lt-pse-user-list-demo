@@ -32,9 +32,9 @@ export function PageNavigateMenu() {
           <DropdownMenuContent>
             <DropdownMenuLabel>Pages</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <Link href="/">
+            {/* <Link href="/">
               <DropdownMenuItem>Native table</DropdownMenuItem>
-            </Link>
+            </Link> */}
             <Link href="/ag-grid">
               <DropdownMenuItem>AG Grid</DropdownMenuItem>
             </Link>

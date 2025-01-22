@@ -7,11 +7,17 @@ import to from 'await-to-js';
 import { FEUserService } from '@/lib/user-service';
 import { useToast } from '@/hooks/use-toast';
 import { setUserFormDrawer } from '@/lib/store/ui-store';
+import { useRouter } from 'next/navigation';
 
-export function UserEditFormWrapper() {
+type UserEditFormWrapperProps = {
+  isMountedOnPage?: boolean;
+};
+
+export function UserEditFormWrapper({ isMountedOnPage }: UserEditFormWrapperProps) {
   const editingUser = useAppSelector((state) => state.user.editingUser);
   const dispatch = useAppDispatch();
   const { toast } = useToast();
+  const router = useRouter();
 
   const onSubmit = async (values: FormUser, helper?: FormikHelpers<FormUser>) => {
     if (editingUser) {
@@ -27,6 +33,10 @@ export function UserEditFormWrapper() {
       helper?.resetForm();
       dispatch(setUserFormDrawer(null));
       toast({ title: 'User updated successfully' });
+
+      if (isMountedOnPage) {
+        router.push('/users');
+      }
     }
   };
 

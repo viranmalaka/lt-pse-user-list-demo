@@ -20,14 +20,14 @@ export class UserService {
           })),
         revenueTypes: [
           {
-            type: 'S',
+            type: 'subscription',
             amount: faker.number.float({ min: 30, max: 100 }),
           },
           {
-            type: 'P',
+            type: 'purchase',
             amount: faker.number.float({ min: 30, max: 100 }),
           },
-          { type: 'A', amount: faker.number.float({ min: 30, max: 100 }) },
+          { type: 'ad', amount: faker.number.float({ min: 30, max: 100 }) },
         ],
         email: faker.internet.email(),
       };
@@ -50,10 +50,10 @@ export class UserService {
       revenueTypes: [
         {
           type: 'subscription',
-          amount: faker.number.float({ min: 0, max: 1000 }),
+          amount: faker.number.float({ min: 0, max: 500 }),
         },
         { type: 'purchase', amount: faker.number.float({ min: 0, max: 1000 }) },
-        { type: 'ad', amount: faker.number.float({ min: 0, max: 1000 }) },
+        { type: 'ad', amount: faker.number.float({ min: 0, max: 400 }) },
       ],
     };
     this.userList.push(user);

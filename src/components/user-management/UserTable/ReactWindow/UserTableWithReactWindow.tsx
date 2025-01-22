@@ -23,7 +23,7 @@ export function UserTableWithReactWindow() {
   }
 
   return (
-    <div style={{ height: 'calc(100vh - 200px)' }}>
+    <div style={{ height: 400 }}>
       <Table>
         <TableHeader>
           <TableRow>

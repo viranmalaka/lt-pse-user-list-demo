@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/store/store';
 import { setUserFormDrawer } from '@/lib/store/ui-store';
 import { UserAddFormWrapper } from '../UserForm/UserAddFormWrapper';
 import { UserEditFormWrapper } from '../UserForm/UserEditFormWrapper';
+import Link from 'next/link';
 
 export function UserFormDrawer() {
   const userFormDrawerState = useAppSelector((state) => state.ui.userFormDrawer);
@@ -33,6 +34,11 @@ export function UserFormDrawer() {
 
         {userFormDrawerState === 'add' && <UserAddFormWrapper />}
         {userFormDrawerState === 'edit' && <UserEditFormWrapper />}
+
+        <div className="my-3 text-right">
+          {userFormDrawerState === 'add' && <Link href="/users/new">Add New User from Page</Link>}
+          {userFormDrawerState === 'edit' && <Link href="/users/edit">Edit User from Page</Link>}
+        </div>
       </SheetContent>
     </Sheet>
   );

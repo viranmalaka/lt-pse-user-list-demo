@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAppDispatch, useAppSelector } from '@/lib/store/store';
 import { setSearchQuery } from '@/lib/store/user-store';
-import { setUserFormDrawer } from '@/lib/store/ui-store';
+import Link from 'next/link';
+import { UserPlus } from 'lucide-react';
 
 export function Filters() {
   const searchQuery = useAppSelector((state) => state.user.searchQuery);
@@ -13,10 +14,6 @@ export function Filters() {
 
   const handleSearch: ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch(setSearchQuery(e.target.value));
-  };
-
-  const handleAddNewModal = () => {
-    dispatch(setUserFormDrawer('add'));
   };
 
   return (
@@ -30,7 +27,12 @@ export function Filters() {
           className="flex-1"
         />
       </div>
-      <Button onClick={handleAddNewModal}>Add New</Button>
+      <Button asChild>
+        <Link href="/users/new">
+          <UserPlus className="mr-2 h-4 w-4" />
+          Add New User
+        </Link>
+      </Button>
     </div>
   );
 }

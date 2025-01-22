@@ -7,10 +7,16 @@ import { FEUserService } from '@/lib/user-service';
 import to from 'await-to-js';
 import { useToast } from '@/hooks/use-toast';
 import { setUserFormDrawer } from '@/lib/store/ui-store';
+import { useRouter } from 'next/navigation';
 
-export function UserAddFormWrapper() {
+type UserAddFormWrapperProps = {
+  isMountedOnPage?: boolean;
+};
+
+export function UserAddFormWrapper({ isMountedOnPage }: UserAddFormWrapperProps) {
   const { toast } = useToast();
   const dispatch = useAppDispatch();
+  const router = useRouter();
 
   const onSubmit = async (values: FormUser, helper?: FormikHelpers<FormUser>) => {
     dispatch(setUserFormLoading(true));
@@ -25,6 +31,9 @@ export function UserAddFormWrapper() {
     helper?.resetForm();
     dispatch(setUserFormDrawer(null));
     toast({ title: 'User created successfully' });
+    if (isMountedOnPage) {
+      router.push('/users');
+    }
   };
 
   return (

@@ -1,9 +1,8 @@
 import { User } from '@/types/user';
-import { RevenueTypePieChart } from '../RevenueTypePieChart';
-import { LastWeekPurchasesChart } from '../LastWeekPurchasesChart';
 import { UserTableActions } from '../UserTableActions';
 import { TableCell, TableRow } from '@/components/ui/table';
 import { getRowStyle } from './utils';
+import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer } from '../AgGrid/CellRenderers';
 
 export function DataTableRow({ style, user }: { index: number; style: React.CSSProperties; user: User }) {
   return (
@@ -18,10 +17,10 @@ export function DataTableRow({ style, user }: { index: number; style: React.CSSP
         {user.age}
       </TableCell>
       <TableCell style={getRowStyle(2)} className="py-0">
-        <RevenueTypePieChart data={user.revenueTypes} width={50} height={50} />
+        <RevenueTypeCellRenderer data={user} />
       </TableCell>
       <TableCell style={getRowStyle(4)} className="py-0.5">
-        <LastWeekPurchasesChart data={user.lastWeekPurchases} />
+        <LastWeekPurchasesCellRenderer data={user} />
       </TableCell>
       <TableCell style={getRowStyle(3)} className="py-3">
         <UserTableActions user={user} />
