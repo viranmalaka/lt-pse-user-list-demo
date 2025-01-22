@@ -27,12 +27,11 @@ export function UserTableWithReactWindow() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead style={getRowStyle(5)}>Full name</TableHead>
-            <TableHead style={getRowStyle(4)}>Email</TableHead>
+            <TableHead style={getRowStyle(6)}>Full name</TableHead>
+            <TableHead style={getRowStyle(6)}>Email</TableHead>
             <TableHead style={getRowStyle(2)}>Age</TableHead>
             <TableHead style={getRowStyle(2)}>Revenue</TableHead>
             <TableHead style={getRowStyle(4)}>Last Week Purchases</TableHead>
-            <TableHead style={getRowStyle(3)}>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody></TableBody>

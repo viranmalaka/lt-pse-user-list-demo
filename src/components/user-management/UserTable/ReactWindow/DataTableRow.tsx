@@ -7,10 +7,10 @@ import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer } from '../CellR
 export function DataTableRow({ style, user }: { index: number; style: React.CSSProperties; user: User }) {
   return (
     <TableRow key={user.id} style={style} className="flex dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
-      <TableCell style={getRowStyle(5)} className="py-4">
+      <TableCell style={getRowStyle(6)} className="py-4">
         {user.firstName} {user.lastName}
       </TableCell>
-      <TableCell style={getRowStyle(4)} className="py-4">
+      <TableCell style={getRowStyle(6)} className="py-4">
         {user.email}
       </TableCell>
       <TableCell style={getRowStyle(2)} className="py-4">
@@ -22,9 +22,9 @@ export function DataTableRow({ style, user }: { index: number; style: React.CSSP
       <TableCell style={getRowStyle(4)} className="py-0.5">
         <LastWeekPurchasesCellRenderer data={user} />
       </TableCell>
-      <TableCell style={getRowStyle(3)} className="py-3">
+      {/* <TableCell style={getRowStyle(3)} className="py-3">
         <UserTableActions user={user} />
-      </TableCell>
+      </TableCell> */}
     </TableRow>
   );
 }
