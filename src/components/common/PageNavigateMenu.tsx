@@ -38,9 +38,12 @@ export function PageNavigateMenu() {
             <Link href="/ag-grid">
               <DropdownMenuItem>AG Grid</DropdownMenuItem>
             </Link>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
+            <Link href="/react-window">
+              <DropdownMenuItem>React Window</DropdownMenuItem>
+            </Link>
+            <Link href="/dashboard">
+              <DropdownMenuItem>Dashboard</DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
@@ -60,6 +63,11 @@ export function PageNavigateMenu() {
             <NavigationMenuItem>
               <Link href="/react-window" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>React Window</NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/dashboard" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>Dashboard</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>

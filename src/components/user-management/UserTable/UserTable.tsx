@@ -1,19 +1,28 @@
 'use client';
 
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useAppSelector } from '@/lib/store/store';
 import { RevenueTypePieChart } from './RevenueTypePieChart';
 import { LastWeekPurchasesChart } from './LastWeekPurchasesChart';
 import { selectFilteredUsers } from '@/lib/store/user-store';
 import { UserTableActions } from './UserTableActions';
+import { Spinner } from '@/components/ui/spinner';
 
 export function UserTable() {
   const users = useAppSelector(selectFilteredUsers);
+  const isLoading = useAppSelector((state) => state.user.isLoading);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-64 items-center justify-center">
+        <Spinner>Loading...</Spinner>
+      </div>
+    );
+  }
 
   return (
     <>
       <Table>
-        <TableCaption>A list of users.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead>Full name</TableHead>
