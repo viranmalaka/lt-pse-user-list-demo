@@ -14,7 +14,12 @@ export function UserTableWithAgGrid() {
 
   return (
     <div style={{ height: 'calc(100vh - 200px)' }}>
-      <AgGridReact rowData={users} columnDefs={columnDef} rowHeight={55} />
+      <AgGridReact
+        rowData={users}
+        columnDefs={columnDef}
+        rowHeight={55}
+        rowClass="dark:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+      />
     </div>
   );
 }

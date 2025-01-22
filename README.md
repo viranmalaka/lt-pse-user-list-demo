@@ -44,24 +44,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   </details>
 
 ### Tasks
-- [ ] Manage User List 
-  - [ ] User list should have 1000+ items
+- [x] Manage User List 
+  - [x] User list should have 1000+ items
   - [x] Users can be search, filter, add and edited. 
   - [x] [Bonus] User can be deleted
   - [x] There should be a column to show bar and donut chart in the user table.
-  - [ ] Virtualization is a must
+  - [x] Virtualization is a must
   
 ### Tech
 - [x] React + Redux
 - [x] Data 
    -  [ ] using json-server or MirageJS
    -  [x] Use in-memory db with nextjs apis with fakerjs
-- [ ] user react-table v8, ag grid, react-base-table for virtualized table
+- [x] user react-table v8, ag grid, react-base-table for virtualized table
 - [ ] or create your own table with react-window, react-virtualization
 - [x] Use formik for form state managements.
 - [x] Add Charts in row, use visx
 - [x] Search and filter by key parameters (name, age, city)
- - [ ] Responsiveness. use MUI v5
+ - [x] Responsiveness. use MUI v5
  - [x] Theme editor - Bonus
     - [x] save on localstorage - used next-theme package.
  - [ ] Unit tests 

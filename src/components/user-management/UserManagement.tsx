@@ -8,7 +8,7 @@ import to from 'await-to-js';
 import { useAppDispatch } from '@/lib/store/store';
 import { UserFormDrawer } from './UserFormDrawer/UserFormDrawer';
 
-export function UserManagement({ children }: PropsWithChildren) {
+export function UserManagement({ children, caption }: PropsWithChildren<{ caption?: string }>) {
   const dispatch = useAppDispatch();
 
   // this all implementation can be moved to react query. but as I need to use redux I am keeping it here
@@ -27,6 +27,7 @@ export function UserManagement({ children }: PropsWithChildren) {
 
   return (
     <div className="space-y-4">
+      {caption && <h2 className="text-sm font-semibold">{caption}</h2>}
       <Filters />
       <UserFormDrawer />
       <div className="overflow-x-auto">{children}</div>

@@ -7,7 +7,7 @@ export const columnDef = [
     field: 'id',
     headerName: 'Name',
     cellRenderer: ({ data }: { data: User }) => `${data.firstName} ${data.lastName}`,
-    flex: 3,
+    flex: 4,
     cellClass: 'py-1',
   },
   {
@@ -23,7 +23,12 @@ export const columnDef = [
     flex: 2,
     cellClass: 'py-1',
   },
-  { field: 'revenueType', headerName: 'Revenue', cellRenderer: RevenueTypeCellRenderer, flex: 2 },
+  {
+    field: 'revenueType',
+    headerName: 'Revenue',
+    cellRenderer: RevenueTypeCellRenderer,
+    flex: 2,
+  },
   {
     field: 'lastWeekPurchases',
     headerName: 'Last Week Purchases',

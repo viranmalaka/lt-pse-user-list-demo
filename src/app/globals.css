@@ -17,3 +17,8 @@ body {
     --radius: 0.5rem;
   }
 }
+
+
+.ag-header {
+  @apply dark:text-white dark:bg-gray-900;
+}

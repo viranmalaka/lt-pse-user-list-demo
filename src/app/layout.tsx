@@ -5,6 +5,7 @@ import './globals.css';
 import { ReduxProvider } from '@/lib/store/StoreProvider';
 import { ThemeProvider } from '@/components/common/ThemeProvider';
 import { ThemeSelector } from '@/components/common/ThemeSelector';
+import { PageNavigateMenu } from '@/components/common/PageNavigateMenu';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -12,14 +13,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <title>Principle Software Engineer - User List Demo</title>
+        <title>User List Demo</title>
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <header className="bg-primary text-primary-foreground flex items-center justify-between p-4">
-            <div className="flex items-center">
-              <img src="/logo.svg" alt="Company Logo" className="mr-4 h-8 w-8" />
-              <h1 className="text-xl font-bold">Principal Software Engineer - User List Demo</h1>
+            <div className="flex items-center gap-4">
+              <h1 className="text-xl font-bold">User List Demo</h1>
+              <PageNavigateMenu />
             </div>
             <div>
               <ThemeSelector />

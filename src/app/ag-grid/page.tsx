@@ -3,7 +3,7 @@ import { UserTableWithAgGrid } from '@/components/user-management/UserTable/AgGr
 
 export default function Page() {
   return (
-    <UserManagement>
+    <UserManagement caption="Implement the table with AG Grid">
       <UserTableWithAgGrid />
     </UserManagement>
   );

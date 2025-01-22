@@ -3,7 +3,7 @@ import { UserTable } from '@/components/user-management/UserTable/UserTable';
 
 export default function Home() {
   return (
-    <UserManagement caption="User Management">
+    <UserManagement caption="Implement the table with Native HTML">
       <UserTable />
     </UserManagement>
   );
