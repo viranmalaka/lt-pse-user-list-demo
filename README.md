@@ -64,4 +64,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
  - [x] Responsiveness. use MUI v5
  - [x] Theme editor - Bonus
     - [x] save on localstorage - used next-theme package.
- - [ ] Unit tests 
+ - [ ] Unit tests - only for utils. could't configure ts-jest without babel. new nextJS apps does not use babel.
