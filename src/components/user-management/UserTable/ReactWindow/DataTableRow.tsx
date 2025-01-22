@@ -2,7 +2,7 @@ import { User } from '@/types/user';
 import { UserTableActions } from '../UserTableActions';
 import { TableCell, TableRow } from '@/components/ui/table';
 import { getRowStyle } from './utils';
-import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer } from '../AgGrid/CellRenderers';
+import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer } from '../CellRenderers';
 
 export function DataTableRow({ style, user }: { index: number; style: React.CSSProperties; user: User }) {
   return (

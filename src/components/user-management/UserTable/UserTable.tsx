@@ -2,11 +2,10 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useAppSelector } from '@/lib/store/store';
-import { RevenueTypePieChart } from './RevenueTypePieChart';
-import { LastWeekPurchasesChart } from './LastWeekPurchasesChart';
 import { selectFilteredUsers } from '@/lib/store/user-store';
 import { UserTableActions } from './UserTableActions';
 import { Spinner } from '@/components/ui/spinner';
+import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer } from './CellRenderers';
 
 export function UserTable() {
   const users = useAppSelector(selectFilteredUsers);
@@ -40,10 +39,10 @@ export function UserTable() {
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.age}</TableCell>
               <TableCell>
-                <RevenueTypePieChart data={user.revenueTypes} width={50} height={50} />
+                <RevenueTypeCellRenderer data={user} />
               </TableCell>
               <TableCell>
-                <LastWeekPurchasesChart data={user.lastWeekPurchases} />
+                <LastWeekPurchasesCellRenderer data={user} />
               </TableCell>
               <TableCell>
                 <UserTableActions user={user} />

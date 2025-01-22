@@ -28,7 +28,6 @@ export function UserRevenueTypes() {
   );
 
   const data = getArrayFromObject(cumulativeRevenue, 'type', 'value');
-  console.log(data);
 
   return (
     <WidgetWrapper title="User Revenue Types" description="Revenue types for all users">

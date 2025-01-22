@@ -1,6 +1,6 @@
 import { ColDef } from 'ag-grid-community';
 import { User } from '@/types/user';
-import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer, UserActionsCellRenderer } from './CellRenderers';
+import { LastWeekPurchasesCellRenderer, RevenueTypeCellRenderer, UserActionsCellRenderer } from '../CellRenderers';
 
 export const columnDef = [
   {

@@ -1,5 +1,5 @@
 import { User } from '@/types/user';
-import { UserTableActions } from '../UserTableActions';
+import { UserTableActions } from './UserTableActions';
 import { Bar, BarChart, Cell, Pie, PieChart, Tooltip, XAxis, YAxis } from 'recharts';
 import { RevenuePieChartColors } from '@/lib/constants';
 
