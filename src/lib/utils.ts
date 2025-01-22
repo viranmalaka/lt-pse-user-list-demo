@@ -1,5 +1,4 @@
 import { AgeDistribution } from '@/types/age-distribution';
-import { User } from '@/types/user';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -7,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function generateAgeDistribution(users: User[]) {
+export function generateAgeDistribution(users: { age: number }[]) {
   return users.reduce((acc, user) => {
     if (user.age <= 20) {
       acc['0-20'] = (acc['0-20'] ?? 0) + 1;
