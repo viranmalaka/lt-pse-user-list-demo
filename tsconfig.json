@@ -35,6 +35,7 @@
     ".next/types/**/*.ts"
 , "src/jest.setup.ks"  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/test-utils.tsx"
   ]
 }
