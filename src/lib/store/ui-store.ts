@@ -5,7 +5,7 @@ export interface IUIState {
   userFormDrawer: 'add' | 'edit' | null; // null means closed
 }
 
-const initialState: IUIState = {
+export const initialState: IUIState = {
   userFormDrawer: null,
 };
 

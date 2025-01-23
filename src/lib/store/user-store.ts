@@ -12,7 +12,7 @@ export interface IUserState {
   editingUser: User | null;
 }
 
-const initialState: IUserState = {
+export const initialState: IUserState = {
   users: [],
   isLoading: false,
   error: '',
