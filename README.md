@@ -48,6 +48,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - [x] User list should have 1000+ items
   - [x] Users can be search, filter, add and edited. 
   - [x] [Bonus] User can be deleted
+  - [x] [Bonus] User add / edit can be done with a separate route or from the modal
   - [x] There should be a column to show bar and donut chart in the user table.
   - [x] Virtualization is a must
   
@@ -57,11 +58,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
    -  [ ] using json-server or MirageJS
    -  [x] Use in-memory db with nextjs apis with fakerjs
 - [x] user react-table v8, ag grid, react-base-table for virtualized table
-- [ ] or create your own table with react-window, react-virtualization
+- [x] [Bonus] or create your own table with react-window, react-virtualization
+    - The table in the dashboard page is used the react-window
+    - The table in the user list uses the ag-grid lib. 
 - [x] Use formik for form state managements.
-- [x] Add Charts in row, use visx
+- [x] Add Charts in row, use recharts (didn't use visx due to the complex implementation)
 - [x] Search and filter by key parameters (name, age, city)
- - [x] Responsiveness. use MUI v5
- - [x] Theme editor - Bonus
+- [x] Sorting can be done in the AG grid table 
+ - [x] Responsiveness. use shadcn and tailwind css.
+ - [x] [Bonus] Theme selector - dark and light theme.
     - [x] save on localstorage - used next-theme package.
- - [ ] Unit tests - only for utils. could't configure ts-jest without babel. new nextJS apps does not use babel.
+ - [x] Unit tests - Added few with almost 100% of coverage

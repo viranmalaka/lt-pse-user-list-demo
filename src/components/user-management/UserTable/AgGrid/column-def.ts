@@ -9,12 +9,14 @@ export const columnDef = [
     cellRenderer: ({ data }: { data: User }) => `${data.firstName} ${data.lastName}`,
     flex: 4,
     cellClass: 'py-1',
+    sortable: true,
   },
   {
     field: 'email',
     headerName: 'Email',
     flex: 5,
     cellClass: 'py-1',
+    sortable: true,
   },
   {
     field: 'age',

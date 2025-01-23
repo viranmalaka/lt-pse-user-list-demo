@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import { UserAgeDistributionDashboardWidget } from './UserAgeDistribution';
-import { Spinner } from '../ui/spinner';
 
+// had to use configureStore from redux-mock-store to create a mock store which is not recommended due to the time being.
 const mockStore = configureStore([]);
 
 describe('UserAgeDistributionDashboardWidget', () => {

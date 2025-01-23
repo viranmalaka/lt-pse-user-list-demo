@@ -5,6 +5,7 @@ import configureStore from 'redux-mock-store';
 import { Filters } from './Filters';
 import { setSearchQuery } from '@/lib/store/user-store';
 
+// had to use configureStore from redux-mock-store to create a mock store which is not recommended due to the time being.
 const mockStore = configureStore([]);
 
 describe('Filters', () => {
