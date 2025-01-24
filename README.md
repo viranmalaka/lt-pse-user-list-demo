@@ -1,10 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Test coverage
-![Coverage](https://raw.githubusercontent.com/viranmalaka/lt-pse-user-list-demo/main/badge.svg)
-
-## Setup Instructions
-
 Install dependencies
 ```bash
 npm install
@@ -81,4 +76,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 ## Deployment
-- Integrated 
+- Integrated Vercel for deployment. you'll be able to see the latest build version on [this URL](https://viranmalaka-user-list-demo.vercel.app/).
+- To run the unit tests for each pushes, I have added the github actions. you'll be able to see the latest status in action tab. ([Actions](https://github.com/viranmalaka/lt-pse-user-list-demo/actions/workflows/unit-tests.yaml))
