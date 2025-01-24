@@ -1,11 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Test coverage
+![Coverage](https://raw.githubusercontent.com/<your-username>/<your-repository>/main/badge.svg)
+
+## Setup Instructions
+
+Install dependencies
+```bash
+npm install
+```
 
 First, run the development server:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -43,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - Hosting the application on GitHub Pages, Netlify, Vercel, or similar platforms to demonstrate the project's functionality in real-time is encouraged.
   </details>
 
-### Tasks
+### Features
 - [x] Manage User List 
   - [x] User list should have 1000+ items
   - [x] Users can be search, filter, add and edited. 
@@ -51,6 +59,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - [x] [Bonus] User add / edit can be done with a separate route or from the modal
   - [x] There should be a column to show bar and donut chart in the user table.
   - [x] Virtualization is a must
+  - [x] Responsiveness
   
 ### Tech
 - [x] React + Redux
@@ -69,3 +78,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
  - [x] [Bonus] Theme selector - dark and light theme.
     - [x] save on localstorage - used next-theme package.
  - [x] Unit tests - Added few with almost 100% of coverage
+
+
+## Deployment
+- Integrated 

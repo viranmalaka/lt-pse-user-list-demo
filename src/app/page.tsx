@@ -23,13 +23,13 @@ export default function Dashboard() {
           <Button asChild variant="outline">
             <Link href="/users">
               <Users className="mr-2 h-4 w-4" />
-              See All Users
+              <span className="hidden sm:block">See All Users</span>
             </Link>
           </Button>
           <Button asChild>
             <Link href="/users/new">
               <UserPlus className="mr-2 h-4 w-4" />
-              Add New User
+              <span className="hidden sm:block">Add New User</span>
             </Link>
           </Button>
         </div>

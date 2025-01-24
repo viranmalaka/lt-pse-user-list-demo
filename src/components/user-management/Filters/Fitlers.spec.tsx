@@ -25,7 +25,7 @@ describe('Filters', () => {
     );
 
     const input = screen.getByPlaceholderText(
-      "Search name city and email here. To filter by age use 'age:30' or 'age:30-40' format",
+      "Search name, city and email here. To filter by age use 'age:30' or 'age:30-40' format",
     );
 
     fireEvent.change(input, { target: { value: 'test query' } });
@@ -47,7 +47,7 @@ describe('Filters', () => {
     );
 
     const input = screen.getByPlaceholderText(
-      "Search name city and email here. To filter by age use 'age:30' or 'age:30-40' format",
+      "Search name, city and email here. To filter by age use 'age:30' or 'age:30-40' format",
     );
 
     expect(input).toHaveValue('initial query');

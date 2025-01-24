@@ -22,13 +22,13 @@ export class UserService {
       revenueTypes: [
         {
           type: 'subscription',
-          amount: faker.number.float({ min: 30, max: 100 }),
+          amount: faker.number.int({ min: 30, max: 100 }),
         },
         {
           type: 'purchase',
-          amount: faker.number.float({ min: 30, max: 100 }),
+          amount: faker.number.int({ min: 30, max: 70 }),
         },
-        { type: 'ad', amount: faker.number.float({ min: 30, max: 100 }) },
+        { type: 'ad', amount: faker.number.int({ min: 30, max: 40 }) },
       ],
     };
   }

@@ -86,7 +86,7 @@ describe('userSlice', () => {
   it('should handle updateUser', () => {
     const initialUser: User = { ...mockUser, id: '1', firstName: 'John', lastName: 'Doe', age: 30 };
     const updatedUser: User = { ...mockUser, id: '1', firstName: 'Jane', lastName: 'Doe', age: 25 };
-    store.dispatch(setUsers([initialUser]));
+    store.dispatch(setUsers([initialUser, { ...initialUser, id: '2' }]));
     store.dispatch(updateUser({ id: '1', newUser: updatedUser }));
     expect((store.getState() as RootState).user.users).toContainEqual(updatedUser);
   });

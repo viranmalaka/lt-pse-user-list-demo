@@ -16,7 +16,7 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="block">Menu</SidebarGroupLabel>
+          <SidebarGroupLabel className="mt-4 block text-lg">Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>

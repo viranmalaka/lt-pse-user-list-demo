@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { uiReducer, setUserFormDrawer } from './ui-store';
-import { IUIState } from './ui-store';
 import { RootState } from './store';
 
 describe('uiSlice', () => {

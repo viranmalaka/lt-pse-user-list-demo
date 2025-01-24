@@ -8,6 +8,7 @@ import { FEUserService } from '@/lib/user-service';
 import { useToast } from '@/hooks/use-toast';
 import { setUserFormDrawer } from '@/lib/store/ui-store';
 import { useRouter } from 'next/navigation';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 type UserEditFormWrapperProps = {
   isMountedOnPage?: boolean;
@@ -44,15 +45,20 @@ export function UserEditFormWrapper({ isMountedOnPage }: UserEditFormWrapperProp
     return null;
   }
   return (
-    <UserForm
-      initialValues={{
-        firstName: editingUser.firstName,
-        lastName: editingUser.lastName,
-        email: editingUser.email,
-        age: editingUser.age,
-        city: editingUser.city,
-      }}
-      onSubmit={onSubmit}
-    />
+    <Card>
+      <CardHeader>Edit User</CardHeader>
+      <CardContent>
+        <UserForm
+          initialValues={{
+            firstName: editingUser.firstName,
+            lastName: editingUser.lastName,
+            email: editingUser.email,
+            age: editingUser.age,
+            city: editingUser.city,
+          }}
+          onSubmit={onSubmit}
+        />
+      </CardContent>
+    </Card>
   );
 }

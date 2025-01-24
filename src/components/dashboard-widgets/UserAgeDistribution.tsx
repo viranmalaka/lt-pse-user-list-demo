@@ -28,7 +28,7 @@ export function UserAgeDistributionDashboardWidget() {
           <Spinner>Loading...</Spinner>
         </div>
       ) : (
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer height={300}>
           <BarChart data={ageDistribution}>
             <XAxis dataKey="ages" />
             <YAxis />

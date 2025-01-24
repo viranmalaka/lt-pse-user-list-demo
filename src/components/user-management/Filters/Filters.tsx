@@ -21,7 +21,7 @@ export function Filters() {
       <div className="flex min-w-[200px] flex-1 items-center gap-2">
         <Input
           type="text"
-          placeholder="Search name city and email here. To filter by age use 'age:30' or 'age:30-40' format"
+          placeholder="Search name, city and email here. To filter by age use 'age:30' or 'age:30-40' format"
           value={searchQuery}
           onChange={handleSearch}
           className="flex-1"

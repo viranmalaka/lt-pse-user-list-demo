@@ -9,10 +9,12 @@ import { selectFilteredUsers } from '@/lib/store/user-store';
 import { getRowStyle } from './utils';
 import { DataTableRow } from './DataTableRow';
 import { Spinner } from '@/components/ui/spinner';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 export function UserTableWithReactWindow() {
   const users = useAppSelector(selectFilteredUsers);
   const isLoading = useAppSelector((state) => state.user.isLoading);
+  const isMobile = useIsMobile();
 
   if (isLoading) {
     return (
@@ -30,8 +32,12 @@ export function UserTableWithReactWindow() {
             <TableHead style={getRowStyle(6)}>Full name</TableHead>
             <TableHead style={getRowStyle(6)}>Email</TableHead>
             <TableHead style={getRowStyle(2)}>Age</TableHead>
-            <TableHead style={getRowStyle(2)}>Revenue</TableHead>
-            <TableHead style={getRowStyle(4)}>Last Week Purchases</TableHead>
+            {!isMobile && (
+              <>
+                <TableHead style={getRowStyle(2)}>Revenue</TableHead>
+                <TableHead style={getRowStyle(4)}>Last Week Purchases</TableHead>
+              </>
+            )}
           </TableRow>
         </TableHeader>
         <TableBody></TableBody>
@@ -40,7 +46,7 @@ export function UserTableWithReactWindow() {
         {({ height, width }: Size) => (
           <div>
             <List height={height - 50} width={width} itemCount={users.length ?? 0} itemSize={55}>
-              {(props) => <DataTableRow user={users[props.index]} {...props} />}
+              {(props) => <DataTableRow isMobile={isMobile} user={users[props.index]} {...props} />}
             </List>
           </div>
         )}

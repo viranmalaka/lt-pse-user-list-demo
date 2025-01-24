@@ -1,7 +1,7 @@
 import { useAppSelector } from '@/lib/store/store';
 import { WidgetWrapper } from './WidgetWrapper';
 import { Spinner } from '../ui/spinner';
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { getArrayFromObject } from '@/lib/utils';
 import { RevenuePieChartColors } from '@/lib/constants';
 
@@ -36,17 +36,27 @@ export function UserRevenueTypes() {
           <Spinner>Loading...</Spinner>
         </div>
       ) : (
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer height={300}>
           <PieChart>
-            <Pie data={data} cx="50%" cy="50%" labelLine={false} outerRadius={100} fill="#8884d8" dataKey="value">
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              outerRadius={100}
+              fill="#8884d8"
+              dataKey="value"
+              nameKey="type"
+            >
               {data.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={RevenuePieChartColors[entry.type as keyof typeof RevenuePieChartColors]}
                 />
               ))}
-              <Tooltip />
             </Pie>
+            <Tooltip />
+            <Legend layout="horizontal" verticalAlign="top" align="center" />
           </PieChart>
         </ResponsiveContainer>
       )}

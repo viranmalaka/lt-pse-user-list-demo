@@ -82,7 +82,7 @@ export const selectFilteredUsers = createSelector(
     }
 
     return users.filter((user) => {
-      const name = `${user.firstName} ${user.lastName}`;
+      const name = `${user.firstName} ${user.lastName} ${user.email} ${user.city}`;
       return name.toLowerCase().includes(searchQuery.toLowerCase());
     });
   },

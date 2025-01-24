@@ -8,6 +8,7 @@ import to from 'await-to-js';
 import { useToast } from '@/hooks/use-toast';
 import { setUserFormDrawer } from '@/lib/store/ui-store';
 import { useRouter } from 'next/navigation';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 type UserAddFormWrapperProps = {
   isMountedOnPage?: boolean;
@@ -37,15 +38,20 @@ export function UserAddFormWrapper({ isMountedOnPage }: UserAddFormWrapperProps)
   };
 
   return (
-    <UserForm
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        age: 0,
-        city: '',
-        email: '',
-      }}
-      onSubmit={onSubmit}
-    />
+    <Card>
+      <CardHeader>Add New User</CardHeader>
+      <CardContent>
+        <UserForm
+          initialValues={{
+            firstName: '',
+            lastName: '',
+            age: 0,
+            city: '',
+            email: '',
+          }}
+          onSubmit={onSubmit}
+        />
+      </CardContent>
+    </Card>
   );
 }
