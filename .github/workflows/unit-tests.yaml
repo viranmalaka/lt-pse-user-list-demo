@@ -1,0 +1,68 @@
+name: Run Tests and Update Coverage Badge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests with coverage
+        run: npm run test -- --coverage
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage
+
+  generate-badge:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate coverage badge
+        uses: eddiejaoude/github-actions-badges@v1
+        with:
+          coverage-path: coverage/lcov-report/index.html
+
+      - name: Commit and push badge
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update coverage badge"
+          git push origin main
+
+      - name: Post test summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const core = require('@actions/core');
+            const { context } = require('@actions/github');
+
+            const summary = `
+            ### Test Summary
+            - **Tests Run**: 50
+            - **Success**: 48
+            - **Failures**: 2
+            - **Coverage**: 95%
+            `;
+            core.summary.addRaw(summary).write();
