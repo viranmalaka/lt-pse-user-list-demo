@@ -22,7 +22,7 @@ export function UserAgeDistributionDashboardWidget() {
   }, [users]);
 
   return (
-    <WidgetWrapper title="User Age Distribution" description="Age distribution of users">
+    <WidgetWrapper title="User Age Distribution" description="Age distribution by age groups">
       {isLoading ? (
         <div className="flex h-64 items-center justify-center">
           <Spinner>Loading...</Spinner>
