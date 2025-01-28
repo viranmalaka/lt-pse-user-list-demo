@@ -38,6 +38,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] User's aggregated values will be displayed in bar chart and pie chart.
 - [x] Responsiveness - well supported mobile view. 
 - [x] Theme Toggle - Light and dark mode can be switched and the preference is persisted in the user session.
+
+### Demo
+- https://github.com/user-attachments/assets/4b08131e-cfe1-4de1-a446-b90447beef42
+
+- https://github.com/user-attachments/assets/f81b55d9-8db2-4419-8dc3-bc38ceae4373
   
 ### Tech
 - [x] React + Redux
